@@ -10,10 +10,10 @@ export default function UserCard() {
         rounded-lg p-3 
         transition-all 
         duration-200 
-        hover:bg-teal-950
+        hover:bg-[#27009134]
+        active:bg-gray-900
+        active:duration-500
         cursor-pointer
-        active:bg-linear-90 from-teal-200 to-violet-200
-        active:text-gray-800
         '
     >
       <section className="flex items-center gap-3">
@@ -30,18 +30,21 @@ export default function UserCard() {
           </h3>
         </div>
       </section>
-      <button 
+      <button
         className='
           text-[13px] 
           rounded-md 
           outline-1 
           px-4 h-8 
-          outline-teal-500
+          outline-violet-800
           cursor-pointer
           transition-all
           duration-200
-          hover:bg-teal-500
+          hover:bg-violet-800
           hover:text-white
+          active:bg-linear-90 from-teal-200 to-violet-200
+          active:duration-600
+          active:text-gray-800
       '>
         Ver perfil
       </button>

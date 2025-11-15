@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { FaUserCircle, FaUserFriends } from 'react-icons/fa'
 import { TbLogout } from 'react-icons/tb'
+import { SiAuthentik } from 'react-icons/si'
 
 
 export default function NavBar() {
@@ -27,7 +28,8 @@ export default function NavBar() {
                 to-violet-500
                 '
         >
-            <Link href='/'>
+            <Link className='flex gap-2 items-center' href='/'>
+                <SiAuthentik size={34}/>
                 <h1 className="text-lg font-semibold cursor-pointer">
                     Users Auth
                 </h1>
@@ -38,21 +40,15 @@ export default function NavBar() {
                     href='/profile'
                     className={`flex items-center gap-1.5 ${styleIcons}`}
                 >
+                    <FaUserCircle size={24} />
                     <h3 className='text-sm'>{nameUser}</h3>
-                    <FaUserCircle
-                        size={24}
-                    />
                 </Link>
                 <Link href='users'>
-                    <FaUserFriends
-                        className={styleIcons}
-                        size={24}
+                    <FaUserFriends className={styleIcons} size={24}
                     />
                 </Link>
                 <Link href='/login'>
-                    <TbLogout
-                        className={styleIcons}
-                        size={24}
+                    <TbLogout className={styleIcons} size={24}
                     />
                 </Link>
             </div>
