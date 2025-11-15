@@ -1,9 +1,12 @@
 'use client'
 import FormField from "@/components/formField"
 import { useRouter } from "next/navigation"
+import { useState } from "react"
 
 export default function Login() {
     const router = useRouter()
+    const [emailInput, setEmailInput] = useState('')
+    const [passwordInput, setPasswordInput] = useState('')
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
@@ -31,12 +34,14 @@ export default function Login() {
                     type="email"
                     name="email"
                     placeholder="Enter your email"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setEmailInput(e.target.value) }}
                 />
                 <FormField
                     label="Password"
                     type="password"
                     name="password"
                     placeholder="Enter your passeord"
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setPasswordInput(e.target.value) }}
                 />
                 <button
                     type="submit"

@@ -39,12 +39,11 @@ export default function UserCard() {
           outline-violet-800
           cursor-pointer
           transition-all
-          duration-200
+          duration-300
           hover:bg-violet-800
           hover:text-white
-          active:bg-linear-90 from-teal-200 to-violet-200
-          active:duration-600
-          active:text-gray-800
+          active:scale-98
+          active:duration-300
       '>
         Ver perfil
       </button>
