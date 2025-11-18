@@ -7,6 +7,8 @@ export const metadata: Metadata = {
   description: "Authentication users app",
 };
 
+const userLogin = true
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -15,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="pt-BR">
       <body>
-        <NavBar/>
+        {userLogin && (<NavBar/>)}
         {children}
       </body>
     </html>

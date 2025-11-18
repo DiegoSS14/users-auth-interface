@@ -1,18 +1,16 @@
 'use client'
 import FormField from "@/components/formField"
 import Link from "next/link"
-import { useRouter } from "next/navigation"
 import { useState } from "react"
+import SelectMenu from "@/components/selectMenu"
 import { SiAuthentik } from "react-icons/si"
 
-export default function Login() {
-    const router = useRouter()
+export default function Register() {
     const [emailInput, setEmailInput] = useState('')
     const [passwordInput, setPasswordInput] = useState('')
 
     function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
         e.preventDefault()
-        router.push('/')
     }
 
     return (
@@ -29,7 +27,7 @@ export default function Login() {
             <div className="flex items-center justify-center h-40 w-40 bg-violet-600 pr-3 rounded-full">
                 <SiAuthentik color="#fff" size={85} />
             </div>
-            <h1 className="text-2xl font-bold">Login</h1>
+            <h1 className="text-2xl font-bold">Register</h1>
             <form
                 onSubmit={(e) => handleSubmit(e)}
                 className="flex flex-col w-full max-w-[400px] gap-2 p-5 bg-zinc-900 rounded-lg"
@@ -48,6 +46,9 @@ export default function Login() {
                     placeholder="Enter your passeord"
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => { setPasswordInput(e.target.value) }}
                 />
+                <SelectMenu
+                    options={['Item 1', 'item 2', 'Item 3']}
+                />
                 <button
                     type="submit"
                     className="
@@ -63,11 +64,11 @@ export default function Login() {
                         text-base
                     "
                 >
-                    Login
+                    Register
                 </button>
             </form>
             <p className="text-[14px]">
-                Ainda não tem uma conta? <Link href='/register' className="font-bold">Cadastre-se</Link>
+                Já tem uma conta? <Link href='/login' className="font-bold">Faça login</Link>
             </p>
         </div>
     )
